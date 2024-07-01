@@ -21,5 +21,5 @@ class Solution:
         hp = dict()
         for i in range(len(inorder)):
             hp[inorder[i]] = i
-        root : TreeNode = self.tree(postorder, 0, len(postorder)-1, inorder, 0 , len(inorder)-1 , hp)
+        root : TreeNode = self.tree(postorder, 0, len(postorder)-1, inorder, 0 , len(inorder)-1 , hp) # type: ignore
         return root

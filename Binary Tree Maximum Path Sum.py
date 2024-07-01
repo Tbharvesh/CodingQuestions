@@ -1,4 +1,7 @@
 # Definition for a binary tree node.
+from typing import Optional
+
+
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -19,5 +22,5 @@ class Solution:
             self.m = max(self.m , curSum)
             return root.val + max(leftSum , rightSum)
         rec(root)
-        return self.m
+        return self.m # type: ignore
         
