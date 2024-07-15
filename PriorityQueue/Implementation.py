@@ -31,3 +31,29 @@ while not pq.empty():
     priority , task = pq.get()
     print(f"Task: {task}, Priority: {priority}")
     
+# Method 3
+print("Method 3 ~ Using a Custom Implementation with a Sorted List")
+class PriorityQ:
+    def __init__(self):
+        self.queue = []
+    def insert(self, priority , task):
+        # Insert every priority / elem in list
+        self.queue.append((priority , task))
+        # Sort the list every time you insert an elem 
+        # So as tpo maintain the MIN heap property
+        self.queue.sort()
+    def pop(self):
+        
+        return self.queue.pop(0)
+    
+pq = PriorityQ()
+pq.insert(2,'a')
+pq.insert(1,'b')
+pq.insert(3,'c')
+
+while pq.queue :
+    priority , task = pq.pop()
+    print(f"Task: {task}, Priority: {priority}")
+    
+
+        
