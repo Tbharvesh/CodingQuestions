@@ -11,13 +11,14 @@ pq = []
 # heapq.heappush(pq ,2)
 
 # Task associated with priority
-heapq.heappush(pq , (2,'a'))
-heapq.heappush(pq , (1,'b'))
-heapq.heappush(pq , (3,'c'))
+# Invert the priority values when we need to use MAX HEAP
+heapq.heappush(pq , (-2,'a'))
+heapq.heappush(pq , (-1,'b'))
+heapq.heappush(pq , (-3,'c'))
 
 while pq:
     priority , task = heapq.heappop(pq)
-    print(f"Task: {task}, Priority: {priority}")
+    print(f"Task: {task}, Priority: {-priority}")  #print -priority for MAX HEAP
     
 # Method 2
 print("Method 2 ~ using queue.PriorityQueue Class ")
