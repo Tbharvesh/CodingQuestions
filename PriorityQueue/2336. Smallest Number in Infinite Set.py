@@ -44,6 +44,7 @@ class SmallestInfiniteSet:
     def addBack(self, num: int) -> None:
         # If cur>val to be added , add num in set 
         #else : the cur will already be stored while cur+=1 in pop() func
+        # if num < self.cur : DONT TAKE THIS Bcoz already covereed in pop()
         if self.cur > num:
             self.set.add(num)
 
