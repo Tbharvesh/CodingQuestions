@@ -1,6 +1,4 @@
 from collections import defaultdict
-
-
 class Solution:
     def minWindow(self, s: str, t: str) -> str:
         if len(s) < len(t):
