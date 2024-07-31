@@ -2,6 +2,7 @@ class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         n = len(s)
         if n == 0:
+            
             return 0
         
         l, r = 0, 0
