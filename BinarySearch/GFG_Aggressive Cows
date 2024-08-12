@@ -1,0 +1,25 @@
+def check(nums,mid,k):
+    cnt =1
+    pos1 = nums[0]
+    
+    for i in range(len(nums)):
+        if abs(pos1 - nums[i]) >=mid :
+            cnt += 1
+            pos1 = nums[i]
+    if cnt >= k:
+        return True
+    return False
+
+
+def aggressiveCows(nums, k):
+    # Write your code here.
+    nums.sort()
+    l , r = 1 ,nums[-1]-nums[0]
+    while(l<=r):
+        m = (l+r)//2
+        if check(nums,m,k) :
+            l = m + 1
+        else:
+            r = m - 1
+    return r
+    
