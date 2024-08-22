@@ -1,20 +1,25 @@
 def check(nums,mid,k):
     cnt =1
+    # last = pos1 = nums[0] i.r pos of last cow 
     pos1 = nums[0]
-    
+      
     for i in range(len(nums)):
-        if abs(pos1 - nums[i]) >=mid :
-            cnt += 1
-            pos1 = nums[i]
+        # if dist(current pos - last cow ) >= reqd dist
+        if nums[i] - pos1 >=mid :
+            cnt += 1 #countOfCows += 2
+            pos1 = nums[i]  #Store last cow pos 
     if cnt >= k:
         return True
     return False
 
+# BS on ans: we are assuming min_dist = 1,2,3... and then cghgecking whether it is possible or not
 
+# min dist between 2 cows --> so cwe should only consider the consecutive position cows  that will only give min. dist , for this sort the aree first
 def aggressiveCows(nums, k):
-    # Write your code here.
     nums.sort()
+    # r = max - min
     l , r = 1 ,nums[-1]-nums[0]
+    # We are applying BS ,min dist =1 , max dist = r -- check for whether the dist 2,3,4... is valid? and return the maxx
     while(l<=r):
         m = (l+r)//2
         if check(nums,m,k) :
